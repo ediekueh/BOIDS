@@ -6,7 +6,8 @@ public class AudioSourceVolume : MonoBehaviour
     AudioSource audioSource;
     public float updateStep = 0.1f;
     public int sampleDataLength = 1024;
-
+    public Flock flock;
+    
     private float currentUpdateTime = 0.0f;
 
     public float clipLoudness;
@@ -36,6 +37,10 @@ public class AudioSourceVolume : MonoBehaviour
             }
             clipLoudness /= sampleDataLength; //clipLoudness is what you are looking for
         }
+        flock.driveFactor = clipLoudness * 800;
+        Debug.Log(clipLoudness);
+        flock.maxSpeed = clipLoudness * 600;
     }
+
 
 }

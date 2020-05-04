@@ -28,6 +28,6 @@ public class FlockAgent : MonoBehaviour
         transform.up = velocity;
         transform.position += velocity * Time.deltaTime;
 
-        Debug.Log(velocity);
+//        Debug.Log(velocity);
     }
 }
